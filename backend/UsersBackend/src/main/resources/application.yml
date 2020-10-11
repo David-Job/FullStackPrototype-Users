@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.103.96/db_users?useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: davijob
+    password: mllmdvdjmnzsrz
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: none
+
+logging:
+  level:
+    org.hibernate.SQL: debug
