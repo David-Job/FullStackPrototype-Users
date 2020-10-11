@@ -7,7 +7,9 @@ import com.davidjob.UsersBackend.entity.dao.IUserDao;
 import com.davidjob.UsersBackend.entity.models.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements IUserService {
 
     @Autowired
@@ -19,9 +21,9 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public Optional<User> getById(int id) {
-        return userDao.findById(id);
-    }
+	public User getById(int id) {
+		return userDao.findById(id).get();
+	}
 
     @Override
     public void create(User user) {
@@ -38,8 +40,8 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void delete(User user) {
-        userDao.delete(user);
+    public void deleteById(int id) {
+        userDao.deleteById(id);
     }
 
 }
