@@ -19,8 +19,12 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public Optional<User> getById(int id) {
-        return userDao.findById(id);
+    public User getById(int id) {
+        Optional<User> foundUser = userDao.findById(id);
+        if (foundUser.isPresent()) {
+            return foundUser.get();
+        }
+        return null;
     }
 
     @Override

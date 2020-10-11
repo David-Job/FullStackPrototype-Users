@@ -1,7 +1,6 @@
 package com.davidjob.UsersBackend.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.davidjob.UsersBackend.entity.models.User;
 import com.davidjob.UsersBackend.entity.services.IUserService;
@@ -28,7 +27,7 @@ public class UserController {
     }
 
     @GetMapping("/api/users/{id}")
-    private Optional<User> getUser(@PathVariable(name = "id") int id) {
+    private User getUser(@PathVariable(name = "id") int id) {
         return userService.getById(id);
     }
 
