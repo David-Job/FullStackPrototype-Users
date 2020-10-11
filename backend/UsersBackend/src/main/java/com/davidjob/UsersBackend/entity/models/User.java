@@ -43,9 +43,10 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(int id, String firstName, String lastName, String email, String phoneNumber) {
+    public User(int id, String nickName, String firstName, String lastName, String email, String phoneNumber) {
         super();
         this.id = id;
+        this.nickName = nickName;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -59,6 +60,15 @@ public class User implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
 
     public String getFirstName() {
         return firstName;
