@@ -41,9 +41,9 @@ public class UserController {
         userService.update(id, user);
     }
 
-    @DeleteMapping("/api/users")
-    private void deleteUser(User user) {
-        userService.delete(user);
+    @DeleteMapping("/api/users/{id}")
+    private void deleteUser(@PathVariable(name = "id") int id) {
+        userService.deleteById(id);
     }
     
 }

@@ -18,6 +18,6 @@ public interface IUserService {
 
     public void update(int id, User user);
 
-    public void delete(User user);
+    public void deleteById(int id);
 
 }

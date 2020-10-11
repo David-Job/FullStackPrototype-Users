@@ -40,8 +40,8 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void delete(User user) {
-        userDao.delete(user);
+    public void deleteById(int id) {
+        userDao.deleteById(id);
     }
 
 }
