@@ -7,7 +7,9 @@ import com.davidjob.UsersBackend.entity.dao.IUserDao;
 import com.davidjob.UsersBackend.entity.models.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements IUserService {
 
     @Autowired
@@ -19,13 +21,9 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User getById(int id) {
-        Optional<User> foundUser = userDao.findById(id);
-        if (foundUser.isPresent()) {
-            return foundUser.get();
-        }
-        return null;
-    }
+	public User getById(int id) {
+		return userDao.findById(id).get();
+	}
 
     @Override
     public void create(User user) {
