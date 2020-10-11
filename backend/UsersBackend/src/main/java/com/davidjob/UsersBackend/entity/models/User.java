@@ -52,7 +52,7 @@ public class User implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
